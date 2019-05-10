@@ -1,0 +1,46 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*",
+      "node_modules/**/*",
+      "coverage/**/*",
+      "private/**/*",
+      "build/**/*",
+      "public/**/*"
+    ]
+  },
+  "compilerOptions": {
+    "plugins": [{ "name": "typescript-tslint-plugin" }]
+  },
+  "noSubmoduleImports": 0,
+  "rules": {
+    "no-shadowed-variable": [
+      true,
+      {
+        "underscore": false
+      }
+    ],
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-this-assignment": false,
+    "no-submodule-imports": [
+      true,
+      "~types",
+      "~features",
+      "~utils",
+      "~assets",
+      "~routes"
+    ],
+    "no-implicit-dependencies": [
+      true,
+      [
+        "~types",
+        "~features",
+        "~utils",
+        "~assets",
+        "~routes"
+      ]
+    ]
+  }
+}
