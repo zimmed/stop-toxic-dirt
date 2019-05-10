@@ -1,14 +1,9 @@
 import React from 'react';
 
-import banner from '~assets/banner.jpg';
 import './AppHeader.css';
 
 function AppHeader() {
-  return (
-    <div className="AppHeader" style={{ backgroundImage: `url(${banner})` }}>
-      &nbsp;
-    </div>
-  );
+  return <div className="AppHeader">&nbsp;</div>;
 }
 
 export default AppHeader;
