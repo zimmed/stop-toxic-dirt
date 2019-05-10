@@ -12,7 +12,12 @@
 }
 
 .AppLogo > .label {
-  font-size: 0.3em;
+  text-transform: uppercase;
+  font-stretch: extra-expanded;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  font-size: 0.225em;
   top: -0.09em;
   z-index: 2;
   position: absolute;
@@ -26,4 +31,8 @@
   color: black;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
     1px 1px 0 white;
+}
+
+.AppLogo > .label > span:last-of-type {
+  font-size: 1.3em;
 }
