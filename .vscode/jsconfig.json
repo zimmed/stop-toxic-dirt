@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "~utils*": ["src/utils*"],
+      "~assets*": ["src/assets*"],
+      "~features*": ["src/features*"],
+      "~types*": ["src/types*"],
+      "~routes*": ["src/routes*"]
+    }
+  }
+}

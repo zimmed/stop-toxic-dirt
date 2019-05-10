@@ -1,0 +1,9 @@
+.default-page {
+  margin: 1em;
+}
+
+.default-page h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+  font-weight: bold;
+}

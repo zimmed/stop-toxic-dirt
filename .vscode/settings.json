@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "jest.showCoverageOnLoad": true,
+  "jest.pathToJest": "./node_modules/.bin/react-app-rewired test --env=jsdom",
+  "files.eol": "\n",
+  "prettier.parser": "flow",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "prettier.endOfLine": "lf"
+}

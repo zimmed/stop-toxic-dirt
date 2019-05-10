@@ -1,0 +1,23 @@
+.AppPage {
+  margin: 0 auto;
+  max-width: 1024px;
+  background-color: #f0f0f0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  flex: 1;
+}
+
+.AppPage > .AppHeader {
+  max-height: 121px;
+}
+
+.AppPage > .AppNav {
+  max-height: 4em;
+}
+
+.AppPage > .body {
+  flex: 1;
+}
