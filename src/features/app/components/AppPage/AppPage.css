@@ -1,23 +1,66 @@
 .AppPage {
-  margin: 0 auto;
-  max-width: 1024px;
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  font-size: inherit;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.AppPage > .content {
+  background: white;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  left: 1em;
+  bottom: 1em;
+  border: 0.1em solid black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.AppPage > .bg {
+  position: absolute;
+  width: 100%;
+  top: 6em;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.AppPage > .bg > img {
+  width: 100vw;
+  height: auto;
+  opacity: 0.5;
+  filter: blur(0.1em);
+}
+
+.AppPage > .bg > .screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 137, 190, 0.67) -25%,
+    rgba(121, 190, 0, 0.67) 100%
+  );
+}
+
+.AppPage > .content > .AppNav {
+  max-height: 8em;
+}
+
+.AppPage > .content > .body {
   flex: 1;
 }
 
-.AppPage > .AppHeader {
-  max-height: 121px;
-}
-
-.AppPage > .AppNav {
-  max-height: 4em;
-}
-
-.AppPage > .body {
-  flex: 1;
+@media screen and (orientation: portrait) {
+  .AppPage > .bg > img {
+    height: 100vh;
+    width: auto;
+  }
 }

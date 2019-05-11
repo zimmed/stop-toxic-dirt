@@ -4,6 +4,7 @@
   "private": true,
   "lang": "en",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "classnames": "^2.2.6",
     "history": "^4.9.0",
     "react": "^16.8.6",

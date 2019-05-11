@@ -1,0 +1,12 @@
+.DivBtn {
+  cursor: pointer;
+  pointer-events: auto;
+}
+.DivBtn[disabled] {
+  cursor: default;
+  pointer-events: none;
+}
+
+.DivBtn:focus {
+  outline: none;
+}
