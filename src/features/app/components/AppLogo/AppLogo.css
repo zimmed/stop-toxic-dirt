@@ -2,7 +2,9 @@
   position: relative;
   height: 1em;
   width: 1em;
+  overflow: hidden;
   font-size: inherit;
+  user-select: none;
 }
 
 .AppLogo > .Icon {

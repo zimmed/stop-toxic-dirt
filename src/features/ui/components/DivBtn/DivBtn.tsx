@@ -5,10 +5,14 @@ import { onEnterKey } from '~utils';
 import './DivBtn.css';
 
 export interface IProps {
+  /** Callback to execute when button is clicked (or activated by keyboard accessibility) */
   action: () => any;
+  /** Allow action propagation to parent nodes (default: false) */
   propagate?: boolean;
-  children?: React.ReactNode;
+  /** Adds `disabled` class to element if true (default: false), and dismounts action callback. */
   disabled?: boolean;
+
+  children?: React.ReactNode;
   className?: string;
   style?: object;
 }

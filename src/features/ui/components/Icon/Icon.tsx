@@ -6,7 +6,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Icon.css';
 
 export interface IProps {
+  /** Fontawesome Icon Name (see: https://fontawesome.com/icons?d=gallery&m=free) */
   name: string;
+  /** Fontawesome Icon Style (default: 'solid') */
+  type?: 'solid' | 'brand';
+
   id?: string;
   style?: object;
   className?: string;
@@ -14,7 +18,15 @@ export interface IProps {
   color?: string;
 }
 
-function Icon({ name, id, style, className, size, color }: IProps) {
+function Icon({
+  name,
+  type = 'solid',
+  id,
+  style,
+  className,
+  size,
+  color,
+}: IProps) {
   const s = {
     ...style,
     ...(size ? { fontSize: size } : null),
@@ -24,13 +36,14 @@ function Icon({ name, id, style, className, size, color }: IProps) {
   return (
     <i
       id={id}
-      className={classnames('Icon fa', `fa-${name}`, className)}
+      className={classnames('Icon', `fa${type[0]} fa-${name}`, className)}
       style={s}
     />
   );
 }
 
 Icon.defaultProps = {
+  type: 'solid',
   style: {},
 };
 

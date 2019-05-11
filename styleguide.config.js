@@ -13,7 +13,10 @@ module.exports = {
   propsParser: parse,
   exampleMode: 'expand',
   usageMode: 'expand',
-  components: 'src/features/**/components/**/[A-Z]*.{js,jsx,ts,tsx}',
+  components: [
+    'src/features/ui/components/**/[A-Z]*.{js,jsx,ts,tsx}',
+    'src/features/app/components/*(AppLogo|AppNav|AppPage)/[A-Z]*.{js,jsx,ts,tsx}',
+  ],
   webpackConfig: webpack,
   dangerouslyUpdateWebpackConfig: override,
 };
