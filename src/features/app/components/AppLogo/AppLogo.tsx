@@ -16,4 +16,5 @@ function AppLogo() {
   );
 }
 
-export default AppLogo;
+// Type cast needed for styleguidist, since no reference to React is used in the component.
+export default AppLogo as React.SFC;

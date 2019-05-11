@@ -18,7 +18,7 @@ const getTitle = (routes: IRoute[], selectedPath: string): string => {
   return route ? route.title : 'Unknown';
 };
 
-function AppHeader({ routes, selectedPath }: IProps) {
+function AppNav({ routes, selectedPath }: IProps) {
   const [curTitle, setTitle] = React.useState(getTitle(routes, selectedPath));
   const [showMenu, setMenu] = React.useState(false);
   const [portrait, setPortrait] = React.useState(
@@ -85,4 +85,4 @@ function AppHeader({ routes, selectedPath }: IProps) {
   );
 }
 
-export default AppHeader;
+export default AppNav;

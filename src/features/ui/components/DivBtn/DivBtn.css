@@ -1,8 +1,9 @@
 .DivBtn {
   cursor: pointer;
   pointer-events: auto;
+  user-select: none;
 }
-.DivBtn[disabled] {
+.DivBtn.disabled {
   cursor: default;
   pointer-events: none;
 }
