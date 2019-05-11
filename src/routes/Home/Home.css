@@ -1,0 +1,69 @@
+.Home > .home-banner {
+  height: 47vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.Home > .home-banner > .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  padding: 1em;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 137, 190, 0.67) -25%,
+    rgba(121, 190, 0, 0.67) 100%
+  );
+}
+
+.Home > .home-banner > img {
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+  position: absolute;
+  z-index: 0;
+}
+
+.Home > .home-banner > .content h1 {
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 4em;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+
+.Home > .home-banner > .content .div {
+  width: 8em;
+  height: 0;
+  border-top: 0.5em solid rgba(134, 221, 255, 0.77);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.Home > .home-banner > .content h2 {
+  margin-top: 0.25em;
+  line-height: 1.5em;
+  color: #eee;
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+}
+
+.Home > .home-banner > .content h2 > em {
+  font-weight: bold;
+}
+
+@media screen and (orientation: portrait) {
+  .Home > .home-banner > img {
+    height: 100%;
+    width: auto;
+  }
+}

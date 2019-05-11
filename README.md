@@ -1,68 +1,151 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# STOP-TOXIC-DIRT
 
-## Available Scripts
+Non-profit ReactJS website project to raise awareness about the toxic dirt dumping in Pepperell, MA.
 
-In the project directory, you can run:
+# Setup Website For Testing/Development
 
-### `npm start`
+## Install Required Tools
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [GitSCM](https://git-scm.com/downloads)
+- [NodeJS LTS (10.x)](https://nodejs.org/en/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Further Recommended Tools For Development
 
-### `npm test`
+#### VSCode
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Get Visual Studio Code](https://code.visualstudio.com/)
 
-### `npm run build`
+Recommended extensions to install and enable for VSCode:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Prettier** (Esben Petersen)
+- **vscode-flow-ide** (gcazaciuc)
+- **npm intellisense** (Christian Kohler)
+- **path intellisense** (Christian Kohler)
+- **ESLint** (Dirk Baeumer)
+- **Jest** (Orta)
+- **GitLens** (Eric Amodio)
+- **Terminal** (Jun Han)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Clone Code Repository Using MacOS / Linux Terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ git clone https://github.com/zimmed/stop-toxic-dirt.git
+$ cd stop-toxic-dirt
+```
 
-### `npm run eject`
+_Alternatively, you can download and extract the codebase manually._
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Install Project Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### MacOS / Linux (terminal)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+$ npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Windows (cmd prompt)
 
-## Learn More
+```
+> npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Run Development Server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### MacOS / Linux (terminal)
 
-### Code Splitting
+```
+$ npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### Windows (cmd prompt)
 
-### Analyzing the Bundle Size
+```
+> npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Build For Production
 
-### Making a Progressive Web App
+Outputs to `<rootDir>/build`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### MacOS / Linux (terminal)
 
-### Advanced Configuration
+```
+$ npm run build
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### Windows (cmd prompt)
 
-### Deployment
+```
+> npm run build
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Contributing Code (assumes MacOS/Linux)
 
-### `npm run build` fails to minify
+#### 0. Cut a new development branch.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+$ git checkout develop
+$ git pull
+$ git checkout -b myBranchName
+```
+
+For `myBranchName` use the following naming convention:
+
+- Adding code as part of feature work: `feature/description-of-work-or-feature`
+- Fixing a bug: `bugfix/description-of-bug-or-fix`
+
+e.g., if I want to add a new "Social Media" route, I might name my feature `feature/social-media`.
+
+_Note: "Feature" work doesn't necessarily have to be inside `src/features`._
+
+#### 1. Make some changes, then double-check them to make sure everything looks correct:
+
+```
+$ git status
+```
+
+#### 2. From here you can either do `$ git add .` to stage all of the changes listed, or you can stage individual changed files for the commit using `$ git add path/to/file/or/directory`.
+
+#### 3. Once the changes are staged, commit them with:
+
+```
+$ git commit -m "Brief message describing the changes."
+```
+
+_Repeat 1-3 for each set of small changes towards the goal of the branch work. No amount of work is too small to commit, so if you're unsure, always err on the side of commiting too frequently (which most would argue is not possible). **Commit often, push rarely.**_
+
+#### 4. Once the bugfix or feature work is complete, you will need to push your working branch to repository:
+
+_**If the branch was created by you and has not yet been pushed**_
+
+```
+$ git push -u origin myBranchName
+```
+
+_**If the branch was created by someone else or already pushed to the repository**_
+
+```
+$ git pull
+$ git push
+```
+
+#### 5. Go to the [Github Repo](https://github.com/zimmed/stop-toxic-dirt) switch to your newly pushed branch in the list of branches, and press the button that says `New pull request`.
+
+#### 6. At the top, make sure the branches are: `base: develop <- compare: myBranchName`. Then add a description and screenshots (if applicable), and on the right, add one or more reviewers to check your changes, and assign the PR to yourself. Finally, at the bottom, press `Create pull request`.
+
+#### 7. Wait for approval. If any change requests are made on the PR, repeat steps 1-4 to modify the PR (using the secondary pull/push method in step 4 since the branch has already been pushed to the repo). The PR will automatically be updated to reflect the newly added changes (refresh the page).
+
+#### 8. Once the PR is approved, press the `Merge pull request` at the bottom, making sure not to use the `Squash` option from the dropdown menu. Don't forget to delete the branch afterwards (this will not delete your local branch, only the copy on the remote repository).
+
+#### 9. Congrats! Your code is now in the `develop` branch. You can now see your changes by checking out and updating your local develop branch:
+
+```
+$ git checkout develop
+$ git pull
+```
+
+And if everything is good, and you are finished with your branch work, you can delete the local branch on your machine, so it doesn't linger unnecessarily:
+
+```
+$ git branch -D myBranchName
+```
