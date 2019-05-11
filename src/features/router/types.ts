@@ -7,6 +7,7 @@ export type RouteComponent = SFC<{
 export interface IRoute {
   path: string;
   params?: string[];
+  icon?: string;
   title: string;
   Component: RouteComponent;
 }

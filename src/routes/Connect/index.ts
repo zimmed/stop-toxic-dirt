@@ -4,4 +4,5 @@ export default {
   Component,
   path: '/connect',
   title: 'Stay Connected',
+  icon: 'link',
 };
