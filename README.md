@@ -18,11 +18,10 @@ Non-profit ReactJS website project to raise awareness about the toxic dirt dumpi
 Recommended extensions to install and enable for VSCode:
 
 - **Prettier** (Esben Petersen)
-- **vscode-flow-ide** (gcazaciuc)
+- **vscode-styled-jsx** (niceSprite)
 - **npm intellisense** (Christian Kohler)
 - **path intellisense** (Christian Kohler)
-- **ESLint** (Dirk Baeumer)
-- **Jest** (Orta)
+- **TSLint** (Microsoft)
 - **GitLens** (Eric Amodio)
 - **Terminal** (Jun Han)
 
