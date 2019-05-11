@@ -12,21 +12,24 @@ export interface IProps {
   selectedPath: string;
 }
 
-const getTitle = (routes: IRoute[], selectedPath: string): string => {
+const getRoute = (routes: IRoute[], selectedPath: string): IRoute => {
   const route = routes.find((r) => r.path === selectedPath);
 
-  return route ? route.title : 'Unknown';
+  if (!route) {
+    throw new Error('No route found!');
+  }
+  return route;
 };
 
 function AppNav({ routes, selectedPath }: IProps) {
-  const [curTitle, setTitle] = React.useState(getTitle(routes, selectedPath));
+  const [curRoute, setRoute] = React.useState(getRoute(routes, selectedPath));
   const [showMenu, setMenu] = React.useState(false);
   const [portrait, setPortrait] = React.useState(
     window.innerHeight > window.innerWidth
   );
   const toggleMenu = () => setMenu(!showMenu);
 
-  React.useEffect(() => setTitle(getTitle(routes, selectedPath)), [
+  React.useEffect(() => setRoute(getRoute(routes, selectedPath)), [
     routes,
     selectedPath,
   ]);
@@ -47,20 +50,27 @@ function AppNav({ routes, selectedPath }: IProps) {
       {portrait ? (
         <div className="menu">
           <div className="current">
-            <span>{curTitle}</span>
+            {curRoute.icon ? <Icon name={curRoute.icon} /> : null}
+            <span>{curRoute.title}</span>
           </div>
           <DivBtn className="menu-toggle" action={toggleMenu}>
             <Icon name="bars" />
           </DivBtn>
           <div className={classnames('menu-list', showMenu && 'visible')}>
-            {routes.map(({ path, title }) =>
+            {routes.map(({ path, title, icon }) =>
               path !== selectedPath ? (
                 <Link key={path} to={path}>
-                  <span>{title}</span>
+                  <span>
+                    {icon ? <Icon name={icon} /> : null}
+                    {title}
+                  </span>
                 </Link>
               ) : (
                 <div key={path}>
-                  <span>{title}</span>
+                  <span>
+                    {icon ? <Icon name={icon} /> : null}
+                    {title}
+                  </span>
                 </div>
               )
             )}
@@ -68,13 +78,15 @@ function AppNav({ routes, selectedPath }: IProps) {
         </div>
       ) : (
         <div className="list">
-          {routes.map(({ path, title }) =>
+          {routes.map(({ path, title, icon }) =>
             path !== selectedPath ? (
               <Link key={path} to={path}>
+                {icon ? <Icon name={icon} /> : null}
                 <span>{title}</span>
               </Link>
             ) : (
               <div key={path}>
+                {icon ? <Icon name={icon} /> : null}
                 <span>{title}</span>
               </div>
             )

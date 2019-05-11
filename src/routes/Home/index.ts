@@ -4,4 +4,5 @@ export default {
   Component,
   path: '/',
   title: 'Home',
+  icon: 'home',
 };

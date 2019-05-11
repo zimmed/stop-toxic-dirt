@@ -39,7 +39,13 @@
 .AppNav > .menu > .current {
   font-size: 1.4em;
   font-weight: bold;
-  flex: 1;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .AppNav > .menu > .menu-list {
@@ -87,6 +93,12 @@
   font-size: 1.4em;
 }
 
+.AppNav > .menu > .menu-list > a > span > .Icon,
+.AppNav > .menu > .menu-list > div > span > .Icon {
+  margin-right: 0.75em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .AppNav > .list {
   flex: 1;
   height: 5em;
@@ -105,9 +117,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10em;
+  padding-left: 1em;
+  padding-right: 1em;
   text-decoration: none !important;
   margin-right: 0.5em;
+  position: relative;
 }
 
 .AppNav > .list > a > span,
@@ -115,6 +129,18 @@
   font-size: 1.2em;
   width: 100%;
   text-align: center;
+  z-index: 1;
+}
+
+.AppNav > .menu > .current > .Icon,
+.AppNav > .list > a > .Icon,
+.AppNav > .list > div > .Icon {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  font-size: 3em;
 }
 
 .AppNav > .list > div {

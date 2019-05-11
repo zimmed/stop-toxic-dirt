@@ -4,4 +4,5 @@ export default {
   Component,
   path: '/info',
   title: 'Get Informed',
+  icon: 'book-open',
 };
