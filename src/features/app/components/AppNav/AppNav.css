@@ -6,7 +6,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 6em;
+  font-size: 1.33em;
+  justify-content: flex-start;
+  transition: font-size 0.5s;
+}
+
+.AppNav.fixed {
+  position: fixed;
+  left: 1.32vh;
+  right: 1.32vh;
+  width: calc(100% - 2.64vh);
+  z-index: 3;
+  font-size: 0.67em;
 }
 
 .AppNav > .logo {
@@ -27,6 +38,7 @@
   align-items: center;
   overflow: visible;
   z-index: 1;
+  height: 5em;
 }
 
 .AppNav > .menu > .menu-toggle {
@@ -48,6 +60,11 @@
   align-items: center;
 }
 
+.AppNav.fixed > .menu > .menu-list {
+  font-size: 2em;
+  top: 2.5em;
+}
+
 .AppNav > .menu > .menu-list {
   position: absolute;
   display: flex;
@@ -55,7 +72,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   right: 0;
-  top: 6em;
+  top: 5em;
   max-width: 0;
   max-height: 0;
   overflow: hidden;
@@ -126,7 +143,7 @@
 
 .AppNav > .list > a > span,
 .AppNav > .list > div > span {
-  font-size: 1.2em;
+  font-size: 1.4em;
   width: 100%;
   text-align: center;
   z-index: 1;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classnames from 'classnames';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { IRoute } from '~features/router/types';
 import { Icon, DivBtn } from '~features/ui/components';
@@ -10,6 +10,8 @@ import './AppNav.css';
 export interface IProps {
   routes: IRoute[];
   selectedPath: string;
+  fixed?: boolean;
+  className?: string;
 }
 
 const getRoute = (routes: IRoute[], selectedPath: string): IRoute => {
@@ -21,7 +23,7 @@ const getRoute = (routes: IRoute[], selectedPath: string): IRoute => {
   return route;
 };
 
-function AppNav({ routes, selectedPath }: IProps) {
+function AppNav({ routes, selectedPath, fixed, className }: IProps) {
   const [curRoute, setRoute] = React.useState(getRoute(routes, selectedPath));
   const [showMenu, setMenu] = React.useState(false);
   const [portrait, setPortrait] = React.useState(
@@ -43,7 +45,7 @@ function AppNav({ routes, selectedPath }: IProps) {
   }, []);
 
   return (
-    <div className="AppNav">
+    <div className={cx('AppNav', fixed && 'fixed', className)}>
       <div className="logo">
         <AppLogo />
       </div>
@@ -56,7 +58,7 @@ function AppNav({ routes, selectedPath }: IProps) {
           <DivBtn className="menu-toggle" action={toggleMenu}>
             <Icon name="bars" />
           </DivBtn>
-          <div className={classnames('menu-list', showMenu && 'visible')}>
+          <div className={cx('menu-list', showMenu && 'visible')}>
             {routes.map(({ path, title, icon }) =>
               path !== selectedPath ? (
                 <Link key={path} to={path}>
@@ -96,5 +98,9 @@ function AppNav({ routes, selectedPath }: IProps) {
     </div>
   );
 }
+
+AppNav.defaultProps = {
+  fixed: false,
+};
 
 export default AppNav;

@@ -15,9 +15,11 @@ export interface IProps {
   children?: React.ReactNode;
   className?: string;
   style?: object;
+  id?: string;
 }
 
 function DivBtn({
+  id,
   action,
   propagate,
   children,
@@ -40,6 +42,7 @@ function DivBtn({
 
   return (
     <div
+      id={id}
       className={classnames('DivBtn', disabled && 'disabled', className)}
       onClick={disabled ? undefined : mFn}
       style={style}

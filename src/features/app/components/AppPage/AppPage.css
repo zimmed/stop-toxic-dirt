@@ -24,7 +24,7 @@
 .AppPage > .bg {
   position: absolute;
   width: 100%;
-  top: 6em;
+  top: 6.5em;
   height: 50%;
   display: flex;
   align-items: center;
@@ -50,15 +50,14 @@
   );
 }
 
-.AppPage > .content > .AppNav {
-  max-height: 8em;
-}
-
 .AppPage > .content > .body {
   flex: 1;
 }
 
 @media screen and (orientation: portrait) {
+  .AppPage {
+    font-size: 0.9em;
+  }
   .AppPage > .bg > img {
     height: 100vh;
     width: auto;

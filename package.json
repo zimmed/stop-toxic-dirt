@@ -7,6 +7,7 @@
     "@fortawesome/fontawesome-free": "^5.8.2",
     "classnames": "^2.2.6",
     "history": "^4.9.0",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-ga": "^2.5.7",
@@ -17,7 +18,7 @@
   "scripts": {
     "start": "run-p start:**",
     "build": "run-s build-test:** build:**",
-    "start:styleguide": "styleguidist server --open",
+    "styleguide": "styleguidist server --open",
     "start:react": "react-app-rewired start",
     "build:react": "react-app-rewired build",
     "test:unit": "react-app-rewired test",
