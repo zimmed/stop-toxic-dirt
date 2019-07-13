@@ -62,8 +62,8 @@ function Home({ routes }: IProps) {
                 </a>{' '}
                 began the task of cleaning this once-toxic river.{' '}
                 <strong>
-                  It took over 20 years of cleanup before the river to even safe
-                  for swimming.
+                  It took over 20 years of cleanup before the river was even
+                  safe for swimming.
                 </strong>{' '}
                 Now, several decades later, the river is clean, clear and full
                 of life. But let's not forget this part of our recent history,
