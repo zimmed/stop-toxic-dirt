@@ -10,9 +10,11 @@ export type ScrollType = 'x' | 'y' | 'all' | null;
 export interface IProps {
   children?: React.ReactNode;
   preview?: boolean;
+  highlight?: string;
   scroll?: ScrollType;
   maxHeight?: string;
   className?: string;
+  onClick?: () => any;
   id?: string;
 }
 
@@ -20,6 +22,8 @@ function Panel({
   className,
   id,
   children,
+  highlight,
+  onClick,
   preview = false,
   scroll = null,
   maxHeight = '10em',
@@ -38,9 +42,12 @@ function Panel({
   });
 
   return (
-    <div
+    <DivBtn
+      action={onClick}
+      disabled={!onClick}
       className={cx(
         'Panel',
+        highlight && `highlight ${highlight}`,
         preview && 'preview',
         scroll && `scroll-${scroll}`,
         expanded && 'expanded',
@@ -70,7 +77,7 @@ function Panel({
           <Icon name={expanded ? 'caret-up' : 'caret-down'} />
         </DivBtn>
       ) : null}
-    </div>
+    </DivBtn>
   );
 }
 

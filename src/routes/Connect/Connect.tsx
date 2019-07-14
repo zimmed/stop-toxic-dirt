@@ -10,7 +10,7 @@ export interface IProps {
   routes: IRoute[];
 }
 
-function Home({ routes }: IProps) {
+function Connect({ routes }: IProps) {
   return (
     <AppPage routes={routes} selectedPath="/connect">
       <div className="Connect default-page">
@@ -23,4 +23,4 @@ function Home({ routes }: IProps) {
   );
 }
 
-export default Home;
+export default Connect;

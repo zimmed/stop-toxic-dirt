@@ -10,7 +10,7 @@ export interface IProps {
   routes: IRoute[];
 }
 
-function Home({ routes }: IProps) {
+function About({ routes }: IProps) {
   return (
     <AppPage routes={routes} selectedPath="/about">
       <div className="About default-page">
@@ -113,4 +113,4 @@ function Home({ routes }: IProps) {
   );
 }
 
-export default Home;
+export default About;

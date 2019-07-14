@@ -4,14 +4,15 @@
   padding: 1em;
   color: black;
   margin: 1em;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 0;
   border-radius: 1em;
   width: calc(100% - 2em);
-  background: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: max-height 300ms;
   box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms;
 }
 
 .Panel > .Panel-expand {
@@ -21,12 +22,29 @@
   color: white;
   width: 100%;
   left: 0;
-  bottom: 0;
+  bottom: -0.1em;
   color: white;
   height: 1.25em;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 200ms;
+}
+
+.Panel.highlight.success {
+  background-color: rgba(64, 128, 0, 0.25);
+}
+
+.Panel.highlight.info {
+  background-color: rgba(0, 64, 128, 0.25);
+}
+
+.Panel.highlight.warn {
+  background-color: rgba(164, 128, 0, 0.25);
+}
+
+.Panel.highlight.error {
+  background-color: rgba(128, 32, 0, 0.25);
 }
 
 .Panel.expanded {
@@ -93,7 +111,6 @@
 
 .Panel > .Panel-content .center {
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -146,8 +163,11 @@
 }
 
 .Panel > .Panel-content a {
-  color: #4040a0;
+  color: rgb(0, 92, 128);
+  transition: color 200ms;
+  font-weight: 500;
   display: inline-block;
+  text-decoration: underline;
 }
 
 .Panel > .Panel-content em {
@@ -187,6 +207,7 @@
 .Panel > .Panel-content ul > li {
   margin-left: 1.5em;
   margin-top: 0.25em;
+  line-height: 1.25em;
 }
 
 .Panel > .Panel-content ul > li:first-child {
@@ -210,4 +231,13 @@
 .Panel > .Panel-content h4 + ul:not(:first-child),
 .Panel > .Panel-content h4 + p:not(:first-child) {
   margin-top: 0.25em;
+}
+
+@media screen and (orientation: landscape) {
+  .Panel > .Panel-content a {
+    text-decoration: none;
+  }
+  .Panel > .Panel-content a:hover {
+    color: rgb(0, 128, 192);
+  }
 }

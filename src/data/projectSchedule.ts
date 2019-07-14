@@ -114,16 +114,6 @@ export default [
   },
   {
     items: [
-      'Abbreviated Notice of Resource Area Delineation – Plans and Report',
-    ],
-    date: '2019/01/28',
-  },
-  {
-    items: ['Notice of Decision from ZBA – Administrative Appeal'],
-    date: '2019/01/30',
-  },
-  {
-    items: [
       'BOS letter to MassDEP in opposition to the proposal',
       'Appeal to Massachusetts Land Court of ZBA overturning building inspector decision',
     ],
@@ -146,4 +136,4 @@ export default [
     ],
     date: '2019/06/28',
   },
-];
+].sort(({ date: a }, { date: b }) => (a < b ? -1 : a > b ? 1 : 0));

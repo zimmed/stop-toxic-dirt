@@ -6,7 +6,7 @@ import './DivBtn.css';
 
 export interface IProps {
   /** Callback to execute when button is clicked (or activated by keyboard accessibility) */
-  action: () => any;
+  action?: () => any;
   /** Allow action propagation to parent nodes (default: false) */
   propagate?: boolean;
   /** Adds `disabled` class to element if true (default: false), and dismounts action callback. */
@@ -29,16 +29,20 @@ function DivBtn({
 }: IProps) {
   const mFn = propagate
     ? action
-    : (e: React.MouseEvent) => {
+    : action
+    ? (e: React.MouseEvent) => {
         action();
         e.stopPropagation();
-      };
+      }
+    : undefined;
   const kFn = propagate
     ? action
-    : (e: React.KeyboardEvent) => {
+    : action
+    ? (e: React.KeyboardEvent) => {
         action();
         e.stopPropagation();
-      };
+      }
+    : undefined;
 
   return (
     <div
@@ -46,7 +50,7 @@ function DivBtn({
       className={classnames('DivBtn', disabled && 'disabled', className)}
       onClick={disabled ? undefined : mFn}
       style={style}
-      onKeyPress={disabled ? null : onEnterKey(kFn)}
+      onKeyPress={disabled || !kFn ? undefined : onEnterKey(kFn)}
       tabIndex={0}
       role="button"
     >

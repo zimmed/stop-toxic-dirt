@@ -61,6 +61,10 @@
   font-weight: bold;
 }
 
+.Home > .Panel {
+  margin-top: 2em;
+}
+
 .Home > .Panel .article {
   display: flex;
   flex-direction: row;

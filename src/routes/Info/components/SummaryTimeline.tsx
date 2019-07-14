@@ -1,7 +1,7 @@
 import * as React from 'react';
 import moment from 'moment';
 import { Panel } from '~features/ui/components';
-import schedule from './schedule';
+import { projectSchedule } from '~data';
 
 function SummaryTimeline() {
   return (
@@ -151,9 +151,9 @@ function SummaryTimeline() {
           <td>Information Updated</td>
         </thead>
         <tbody>
-          {schedule.map(({ date, items }, i) => (
+          {projectSchedule.map(({ date, items }, i) => (
             <tr key={i}>
-              <td>{moment(date).format('MM/DD/YY')}</td>
+              <td>{moment(date).format('D MMM YY')}</td>
               <td>
                 <ul>
                   {items.map((s, j) => (

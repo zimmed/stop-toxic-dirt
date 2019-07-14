@@ -5,6 +5,8 @@
   "lang": "en",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
+    "@types/react-table": "^6.8.4",
+    "@types/react-youtube": "^7.6.2",
     "classnames": "^2.2.6",
     "history": "^4.9.0",
     "moment": "^2.24.0",
@@ -13,7 +15,9 @@
     "react-ga": "^2.5.7",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "react-table": "^6.10.0",
+    "react-youtube": "^7.9.0"
   },
   "scripts": {
     "start": "run-p start:**",
@@ -65,7 +69,8 @@
     "~assets": "src/assets",
     "~types": "src/types",
     "~utils": "src/utils",
-    "~routes": "src/routes"
+    "~routes": "src/routes",
+    "~data": "src/data"
   },
   "jest": {
     "moduleNameMapper": {
@@ -73,7 +78,8 @@
       "~features(.*)$": "<rootDir>/src/features$1",
       "~types(.*)$": "<rootDir>/src/types$1",
       "~utils(.*)$": "<rootDir>/src/utils$1",
-      "~routes(.*)$": "<rootDir>/src/routes$1"
+      "~routes(.*)$": "<rootDir>/src/routes$1",
+      "~data(.*)$": "<rootDir>/src/data$1"
     }
   }
 }
