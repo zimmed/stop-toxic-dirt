@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "run-p start:**",
-    "build": "run-s build-test:** build:**",
+    "build": "run-s build:**",
     "styleguide": "styleguidist server --open",
     "start:react": "react-app-rewired start",
     "build:react": "react-app-rewired build",
