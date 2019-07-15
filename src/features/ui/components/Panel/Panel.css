@@ -179,7 +179,7 @@
 }
 
 .Panel > .Panel-content a:visited {
-  color: inherit;
+  color: rgb(0, 128, 92);
 }
 
 .Panel > .Panel-content h1 {

@@ -116,6 +116,40 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.AppNav .fill {
+  flex: 1;
+}
+
+.AppNav > .list > .zoomMenu {
+  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  color: #666;
+  width: 3em;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  transition: color 200ms;
+  position: relative;
+  z-index: 1;
+}
+
+.AppNav > .list > .zoomMenu > .DivBtn {
+  opacity: 0.33;
+  z-index: 2;
+}
+
+.AppNav > .list > .zoomMenu > .zoom {
+  position: absolute;
+  z-index: 0;
+  left: calc(-100%);
+  font-size: 0.8em;
+}
+
+.AppNav > .list > .zoomMenu > .DivBtn:not(.disabled):hover {
+  opacity: 1;
+}
+
 .AppNav > .list {
   flex: 1;
   height: 5em;

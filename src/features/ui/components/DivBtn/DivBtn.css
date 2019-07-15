@@ -2,6 +2,7 @@
   cursor: pointer;
   pointer-events: auto;
   user-select: none;
+  transition: color 200ms, background-color 200ms, opacity 200ms;
 }
 .DivBtn.disabled {
   cursor: default;
