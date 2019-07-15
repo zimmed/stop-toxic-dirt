@@ -68,7 +68,7 @@ function Sidebar() {
             Residents of all towns along the Nashua river will be affected,
             especially those upstream from the dumping sites (again{' '}
             <strong>just 200 feet</strong> from the river), such as Hollis and
-            Nashua.
+            Nashua residents.
           </li>
           <li>
             Pepperell residents, especially, will <em>enjoy</em> an increase in
