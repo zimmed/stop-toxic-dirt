@@ -6,12 +6,3 @@
 .Connect .YardSign .details {
   margin-left: 1em;
 }
-
-@media screen and (orientation: portrait) {
-  .Connect .YardSign .sign-image img {
-    max-height: auto;
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-  }
-}
