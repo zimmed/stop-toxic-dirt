@@ -1,10 +1,9 @@
 import * as React from 'react';
-import cx from 'classnames';
-import { Panel, Image } from '~features/ui/components';
+import { Panel, Image, A } from '~features/ui/components';
 
 import signImg from '~assets/NoToxicDirt.png';
 
-function YardSign({}) {
+function YardSign() {
   return (
     <Panel className="YardSign">
       <Image className="sign-image" src={signImg} zoom={50} />
@@ -18,9 +17,12 @@ function YardSign({}) {
         </p>
         <p>
           If you would like a sign, please{' '}
-          <a href="mailto:ContactUs@stoptoxicdirt.com?Subject=No%20Toxic%20Dirt%20Sign&body=I%20would%20like%20to%20purchase%20a%20No%20Toxic%20Dirt%20lawn%20sign.">
+          <A
+            sameTab={true}
+            src="mailto:ContactUs@stoptoxicdirt.com?Subject=No%20Toxic%20Dirt%20Sign&body=I%20would%20like%20to%20purchase%20a%20No%20Toxic%20Dirt%20lawn%20sign."
+          >
             email us at ContactUs@StopToxicDirt.com
-          </a>
+          </A>
           , and we will make arrangements to get you one (or more if needed).
         </p>
       </div>

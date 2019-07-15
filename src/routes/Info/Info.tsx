@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppPage } from '~features/app/components';
 import { IRoute } from '~features/router/types';
-import { Panel, Image } from '~features/ui/components';
+import { Panel, A } from '~features/ui/components';
 import { SummaryTimeline, Sidebar, Documents, News } from './components';
 
 import '~assets/default-page.css';
@@ -13,10 +13,6 @@ export interface IProps {
 }
 
 function Info({ routes }: IProps) {
-  const colors = ['', 'info', 'success', 'warn', 'error'];
-  const [clr, setClr] = React.useState(0);
-  const toggle = () => setClr((clr + 1) % colors.length);
-
   return (
     <AppPage routes={routes} selectedPath="/info">
       <div className="Info default-page">
@@ -41,31 +37,22 @@ function Info({ routes }: IProps) {
               the proposed dump project.
             </p>
             <p className="center">
-              <a
-                href="http://vp.telvue.com/preview?id=T02761&video=343967"
-                target="_blank"
-              >
+              <A src="http://vp.telvue.com/preview?id=T02761&video=343967">
                 Watch the Board of Selectmen's decision to send MassDEP Letter
                 of Opposition and to appeal the ZBA decision
-              </a>
+              </A>
               <br />
               <span>(Vote starts at time code: 17:00)</span>
             </p>
             <p className="center">
-              <a
-                href="https://town.pepperell.ma.us/DocumentCenter/View/4393/Appeal-to-Land-Court-of-ZBA-161-Nashua-Rd-Decision"
-                target="_blank"
-              >
+              <A src="https://town.pepperell.ma.us/DocumentCenter/View/4393/Appeal-to-Land-Court-of-ZBA-161-Nashua-Rd-Decision">
                 Read the Board of Selectmen ZBA Appeal to Land Court
-              </a>
+              </A>
             </p>
             <p className="center">
-              <a
-                href="https://town.pepperell.ma.us/DocumentCenter/View/4392/BOS-Letter-to-MassDEP-in-opposition-to-proposal"
-                target="_blank"
-              >
+              <A src="https://town.pepperell.ma.us/DocumentCenter/View/4392/BOS-Letter-to-MassDEP-in-opposition-to-proposal">
                 Read the Board of Selectmen Letter of Opposition to the MassDEP
-              </a>
+              </A>
             </p>
           </Panel>
           <SummaryTimeline />
@@ -83,12 +70,9 @@ function Info({ routes }: IProps) {
             </p>
             <p>You can search and watch them by clicking on the link below.</p>
             <p>
-              <a
-                href="http://www.pepperellchannel.org/VOD.html"
-                target="_blank"
-              >
+              <A src="http://www.pepperellchannel.org/VOD.html">
                 Pepperell Community Media - Video On Demand
-              </a>
+              </A>
             </p>
           </Panel>
           <News />

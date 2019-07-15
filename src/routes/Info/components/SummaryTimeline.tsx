@@ -1,6 +1,6 @@
 import * as React from 'react';
 import moment from 'moment';
-import { Panel } from '~features/ui/components';
+import { Panel, A } from '~features/ui/components';
 import { projectSchedule } from '~data';
 
 function SummaryTimeline() {
@@ -9,12 +9,9 @@ function SummaryTimeline() {
       <p className="small">
         <em>
           [ Copied from:{' '}
-          <a
-            href="https://town.pepperell.ma.us/DocumentCenter/View/4628/Soil-Reclamation-Summary-Revised-07-01-2019"
-            target="_blank"
-          >
+          <A src="https://town.pepperell.ma.us/DocumentCenter/View/4628/Soil-Reclamation-Summary-Revised-07-01-2019">
             https://town.pepperell.ma.us/DocumentCenter/View/4628/Soil-Reclamation-Summary-Revised-07-01-2019
-          </a>{' '}
+          </A>{' '}
           ]
         </em>
       </p>
@@ -133,12 +130,9 @@ function SummaryTimeline() {
         Town of Pepperell webpage:
       </p>
       <p className="indent justify">
-        <a
-          href="https://town.pepperell.ma.us/566/4080/Soil-Reclamation-Proposal"
-          target="_blank"
-        >
+        <A src="https://town.pepperell.ma.us/566/4080/Soil-Reclamation-Proposal">
           https://town.pepperell.ma.us/566/4080/Soil-Reclamation-Proposal
-        </a>
+        </A>
       </p>
       <p className="indent justify">
         We thank you for your continued interest in this proposal and assure you
@@ -147,13 +141,15 @@ function SummaryTimeline() {
       </p>
       <table>
         <thead>
-          <td>Date</td>
-          <td>Information Updated</td>
+          <tr>
+            <th>Date</th>
+            <th>Information Updated</th>
+          </tr>
         </thead>
         <tbody>
           {projectSchedule.map(({ date, items }, i) => (
             <tr key={i}>
-              <td>{moment(date).format('D MMM YY')}</td>
+              <td>{moment(date, 'YYYY/MM/DD').format('D MMM YY')}</td>
               <td>
                 <ul>
                   {items.map((s, j) => (

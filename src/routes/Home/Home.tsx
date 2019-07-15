@@ -2,7 +2,7 @@ import React from 'react';
 import { AppPage } from '~features/app/components';
 import { IRoute } from '~features/router/types';
 import { Link } from 'react-router-dom';
-import { Panel, Image } from '~features/ui/components';
+import { Panel, Image, A } from '~features/ui/components';
 
 import railtrail from '~assets/railtrail.jpg';
 import '~assets/default-page.css';
@@ -54,12 +54,9 @@ function Home({ routes }: IProps) {
               </p>
               <p className="justify spaced">
                 In 1969, local residents led by the{' '}
-                <a
-                  href="https://www.nashuariverwatershed.org/who-we-are/mission-and-history/overview.html"
-                  target="_blank"
-                >
+                <A src="https://www.nashuariverwatershed.org/who-we-are/mission-and-history/overview.html">
                   Nashua River Watershed Association
-                </a>{' '}
+                </A>{' '}
                 began the task of cleaning this once-toxic river.{' '}
                 <strong>
                   It took over 20 years of cleanup before the river was even

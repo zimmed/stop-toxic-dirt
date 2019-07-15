@@ -1,5 +1,7 @@
 import * as React from 'react';
 import cx from 'classnames';
+import { useContext } from '~features/state';
+import { A } from '~features/ui/components';
 import DivBtn from '../DivBtn';
 
 import './Image.css';
@@ -28,6 +30,7 @@ function Image({
   id,
 }: IProps) {
   let linkRef: HTMLAnchorElement;
+  const state = useContext();
   const action = () => {
     if (onClick) {
       onClick();
@@ -36,6 +39,7 @@ function Image({
       linkRef.click();
     }
   };
+  const zVal = Math.floor(zoom * state.zoom);
 
   return (
     <DivBtn
@@ -50,21 +54,20 @@ function Image({
           src={src}
           alt={caption || src}
           style={{
-            zoom: `${zoom}%`,
+            zoom: `${zVal}%`,
           }}
         />
         {caption ? <span className="caption">{caption}</span> : null}
         {source ? (
           <>
             <span className="source">[ source: {source.name} ]</span>
-            <a
+            <A
               className="hide"
-              href={source.src}
-              target="_blank"
+              src={source.src}
               ref={(ref) => (ref ? (linkRef = ref) : null)}
             >
               #
-            </a>
+            </A>
           </>
         ) : null}
       </>

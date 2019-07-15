@@ -1,7 +1,6 @@
 import * as React from 'react';
-import cx from 'classnames';
 import YT from 'react-youtube';
-import { Panel, Image } from '~features/ui/components';
+import { Panel, Image, A } from '~features/ui/components';
 import { infoLinks } from '~data';
 
 const dumpImg = {
@@ -87,19 +86,17 @@ function Sidebar() {
         <h4 className="center">
           <strong>Additional Resources</strong>
         </h4>
-        {infoLinks.map(({ category, links }) => (
-          <>
+        {infoLinks.map(({ category, links }, j) => (
+          <React.Fragment key={j}>
             <h4>{category}</h4>
             <ul>
               {links.map(({ name, url }, i) => (
                 <li key={i}>
-                  <a href={url} target="_blank">
-                    {name}
-                  </a>
+                  <A src={url}>{name}</A>
                 </li>
               ))}
             </ul>
-          </>
+          </React.Fragment>
         ))}
       </Panel>
       <Panel highlight="error">
@@ -117,12 +114,9 @@ function Sidebar() {
 
         <p>
           For reference, a{' '}
-          <a
-            href="https://www.google.com/search?q=3+axle+dump+truck"
-            target="_blank"
-          >
+          <A src="https://www.google.com/search?q=3+axle+dump+truck">
             3-axle dump truck
-          </a>{' '}
+          </A>{' '}
           can hold a <strong>maximum of 22 cubic yards of soil</strong>, or 16.5
           cubic yards of gravel. This means, either the amount per truck is
           greatly over-estimated, resulting in{' '}
@@ -135,25 +129,17 @@ function Sidebar() {
         <label>More Info</label>
         <ul>
           <li>
-            <a
-              href="https://www.coopskw.com/learn-much-dirt-can-carry-kenworth-dump-trucks/"
-              target="_blank"
-            >
+            <A src="https://www.coopskw.com/learn-much-dirt-can-carry-kenworth-dump-trucks/">
               Dump Truck Capacity
-            </a>
+            </A>
           </li>
           <li>
-            <a
-              href="https://www.todayshomeowner.com/buying-materials-by-the-cubic-yard-faq/"
-              target="_blank"
-            >
+            <A src="https://www.todayshomeowner.com/buying-materials-by-the-cubic-yard-faq/">
               Cubic Yard FAQ
-            </a>
+            </A>
           </li>
           <li>
-            <a href="https://en.wikipedia.org/wiki/Dump_truck" target="_blank">
-              Wikipedia
-            </a>
+            <A src="https://en.wikipedia.org/wiki/Dump_truck">Wikipedia</A>
           </li>
         </ul>
       </Panel>
