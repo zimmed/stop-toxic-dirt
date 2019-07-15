@@ -1,0 +1,8 @@
+.Connect .YardSign > .Panel-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.Connect .YardSign .details {
+  margin-left: 1em;
+}

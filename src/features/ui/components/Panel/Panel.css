@@ -1,0 +1,243 @@
+.Panel {
+  height: auto;
+  position: relative;
+  padding: 1em;
+  color: black;
+  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  border-radius: 1em;
+  width: calc(100% - 2em);
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: max-height 300ms;
+  box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms;
+}
+
+.Panel > .Panel-expand {
+  position: absolute;
+  z-index: 2;
+  background: rgba(64, 64, 64, 0.9);
+  color: white;
+  width: 100%;
+  left: 0;
+  bottom: -0.1em;
+  color: white;
+  height: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms;
+}
+
+.Panel.highlight.success {
+  background-color: rgba(64, 128, 0, 0.25);
+}
+
+.Panel.highlight.info {
+  background-color: rgba(0, 64, 128, 0.25);
+}
+
+.Panel.highlight.warn {
+  background-color: rgba(164, 128, 0, 0.25);
+}
+
+.Panel.highlight.error {
+  background-color: rgba(128, 32, 0, 0.25);
+}
+
+.Panel.expanded {
+  padding-bottom: 2em;
+}
+
+.Panel.scroll-y {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.Panel.scroll-x {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.Panel.scroll-all {
+  overflow: scroll;
+}
+
+.Panel > .Panel-content table {
+  margin: 1em;
+  opacity: 0.8;
+  border: 1px solid black;
+}
+.Panel > .Panel-content table td {
+  padding: 0.33em;
+}
+.Panel > .Panel-content table td:first-child {
+  text-align: center;
+  border-right: 1px dotted black;
+}
+.Panel > .Panel-content table thead > td {
+  font-weight: bold;
+  text-align: center;
+}
+.Panel > .Panel-content table tbody > tr {
+  border-top: 1px dotted black;
+}
+.Panel > .Panel-content table tbody ul {
+  list-style: disc;
+}
+
+.Panel > .Panel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.Panel > .Panel-content p:not(:first-child),
+.Panel > .Panel-content h1:not(:first-child),
+.Panel > .Panel-content h2:not(:first-child),
+.Panel > .Panel-content h3:not(:first-child),
+.Panel > .Panel-content h4:not(:first-child),
+.Panel > .Panel-content ul:not(:first-child),
+.Panel > .Panel-content label:not(:first-child) {
+  margin-top: 1em;
+}
+
+.Panel > .Panel-content p {
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content .center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Panel > .Panel-content .right {
+  text-align: right;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Panel > .Panel-content .left {
+  text-align: left;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.Panel > .Panel-content .indent {
+  text-indent: 1.5em;
+}
+
+.Panel > .Panel-content .row {
+  display: flex;
+  flex-direction: row;
+}
+.Panel > .Panel-content .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel > .Panel-content .fill {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.Panel > .Panel-content .spaced {
+  letter-spacing: 0.05em;
+}
+
+.Panel > .Panel-content .justify {
+  text-align: justify;
+}
+
+.Panel > .Panel-content .small {
+  font-size: 0.75em;
+}
+
+.Panel > .Panel-content .stretch {
+  align-items: stretch;
+}
+
+.Panel > .Panel-content a {
+  color: rgb(0, 92, 128);
+  transition: color 200ms;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.Panel > .Panel-content em {
+  font-style: italic;
+}
+
+.Panel > .Panel-content strong {
+  font-weight: bold;
+}
+
+.Panel > .Panel-content a:visited {
+  color: rgb(0, 128, 92);
+}
+
+.Panel > .Panel-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content h3 {
+  font-size: 1.5em;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content h4 {
+  text-transform: uppercase;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content ul > li {
+  margin-left: 1.5em;
+  margin-top: 0.25em;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content ul > li:first-child {
+  margin-top: 0;
+}
+
+.Panel > .Panel-content label {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+.Panel > .Panel-content label + ul:not(:first-child),
+.Panel > .Panel-content label + p:not(:first-child),
+.Panel > .Panel-content h1 + ul:not(:first-child),
+.Panel > .Panel-content h1 + p:not(:first-child),
+.Panel > .Panel-content h2 + ul:not(:first-child),
+.Panel > .Panel-content h2 + p:not(:first-child),
+.Panel > .Panel-content h3 + ul:not(:first-child),
+.Panel > .Panel-content h3 + p:not(:first-child),
+.Panel > .Panel-content h4 + ul:not(:first-child),
+.Panel > .Panel-content h4 + p:not(:first-child) {
+  margin-top: 0.25em;
+}
+
+@media screen and (orientation: landscape) {
+  .Panel > .Panel-content a {
+    text-decoration: none;
+  }
+  .Panel > .Panel-content a:hover {
+    color: rgb(0, 128, 192);
+  }
+}

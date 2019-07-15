@@ -30,17 +30,12 @@
       "~features",
       "~utils",
       "~assets",
-      "~routes"
+      "~routes",
+      "~data"
     ],
     "no-implicit-dependencies": [
       true,
-      [
-        "~types",
-        "~features",
-        "~utils",
-        "~assets",
-        "~routes"
-      ]
+      ["~types", "~features", "~utils", "~assets", "~routes", "~data"]
     ]
   }
 }
