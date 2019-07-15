@@ -1,14 +1,15 @@
 import * as React from 'react';
 import moment from 'moment';
 import Table from 'react-table';
-import { Panel } from '~features/ui/components';
+import { Panel, A } from '~features/ui/components';
 import { news } from '~data';
 
 const columns = [
   {
     accessor: 'date',
     Header: 'Date',
-    Cell: ({ value }: { value: string }) => moment(value).format('DD MMM YY'),
+    Cell: ({ value }: { value: string }) =>
+      moment(value, 'YYYY/MM/DD').format('DD MMM YY'),
     style: { textAlign: 'center' },
   },
   {
@@ -25,11 +26,7 @@ const columns = [
     }: {
       value: string;
       original: { url: string };
-    }) => (
-      <a href={url} target="_blank">
-        {value}
-      </a>
-    ),
+    }) => <A src={url}>{value}</A>,
   },
 ];
 

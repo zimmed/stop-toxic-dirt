@@ -70,14 +70,16 @@
   opacity: 0.8;
   border: 1px solid black;
 }
-.Panel > .Panel-content table td {
+.Panel > .Panel-content table td,
+.Panel > .Panel-content table th {
   padding: 0.33em;
 }
-.Panel > .Panel-content table td:first-child {
+.Panel > .Panel-content table td:first-child,
+.Panel > .Panel-content table th:first-child {
   text-align: center;
   border-right: 1px dotted black;
 }
-.Panel > .Panel-content table thead > td {
+.Panel > .Panel-content table thead th {
   font-weight: bold;
   text-align: center;
 }

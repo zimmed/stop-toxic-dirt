@@ -16,7 +16,7 @@ export interface IProps {
   onZoomOut?: () => any;
   disableZoomIn?: boolean;
   disableZoomOut?: boolean;
-  zoom?: number;
+  zoom: number;
 }
 
 const getRoute = (routes: IRoute[], selectedPath: string): IRoute => {
@@ -27,6 +27,8 @@ const getRoute = (routes: IRoute[], selectedPath: string): IRoute => {
   }
   return route;
 };
+
+let prevZoom = 1.0;
 
 function AppNav({
   routes,
@@ -41,6 +43,7 @@ function AppNav({
 }: IProps) {
   const [curRoute, setRoute] = React.useState(getRoute(routes, selectedPath));
   const [showMenu, setMenu] = React.useState(false);
+  const [showZoom, setShowZoom] = React.useState(false);
   const [portrait, setPortrait] = React.useState(
     window.innerHeight > window.innerWidth
   );
@@ -58,6 +61,10 @@ function AppNav({
     window.addEventListener('resize', onChange);
     return () => window.removeEventListener('resize', onChange);
   }, []);
+  React.useEffect(() => {
+    setShowZoom(zoom !== prevZoom);
+    prevZoom = zoom;
+  }, [zoom]);
 
   return (
     <div className={cx('AppNav', fixed && 'fixed', className)}>
@@ -117,9 +124,9 @@ function AppNav({
               <DivBtn action={onZoomIn} disabled={disableZoomIn}>
                 <Icon name="plus-circle" />
               </DivBtn>
-              {zoom ? (
-                <span className="zoom">{Math.floor(zoom * 100)}%</span>
-              ) : null}
+              <span className={cx('zoom', showZoom && 'show')}>
+                {Math.floor(zoom * 100)}%
+              </span>
             </div>
           ) : null}
         </div>
