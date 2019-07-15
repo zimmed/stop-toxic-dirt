@@ -7,7 +7,7 @@ import signImg from '~assets/NoToxicDirt.png';
 function YardSign({}) {
   return (
     <Panel className="YardSign">
-      <Image src={signImg} zoom={50} />
+      <Image className="sign-image" src={signImg} zoom={50} />
       <div className="details">
         <h2 className="center">
           We have <em>No Toxic Dirt</em> lawn signs available!
