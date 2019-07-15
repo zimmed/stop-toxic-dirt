@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 export const CONFIG = {
   zoom: {
     min: 0.5,
-    max: 3.0,
+    max: 2.0,
     step: 0.25,
     default: 1.0,
   },
