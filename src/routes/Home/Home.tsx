@@ -34,7 +34,7 @@ function Home({ routes }: IProps) {
             <div className="div" />
             <h2>
               The proposed dumping sites for the estimated <em>4 million </em>
-              cubic yards of "regulated" contaminents in Pepperell are located
+              cubic yards of "regulated" contaminants in Pepperell are located
               just <em>200 feet </em> from the Nashua river and only 100 feet
               from Pepperell Zone II wells.
             </h2>
@@ -53,7 +53,7 @@ function Home({ routes }: IProps) {
                 day, depending on what was discharged that day.
               </p>
               <p className="justify spaced">
-                In 1969, local residents lead by the{' '}
+                In 1969, local residents led by the{' '}
                 <a
                   href="https://www.nashuariverwatershed.org/who-we-are/mission-and-history/overview.html"
                   target="_blank"
