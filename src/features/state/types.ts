@@ -7,10 +7,16 @@ export const CONFIG = {
     step: 0.25,
     default: 1.0,
   },
+  isPortrait: {
+    check: (window: Window): boolean =>
+      window.matchMedia('(orientation: portrait)').matches,
+    default: false,
+  },
 };
 
 export interface IState {
   zoom: number;
+  isPortrait: boolean;
 }
 
 export type Data = {

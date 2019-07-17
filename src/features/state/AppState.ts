@@ -8,6 +8,12 @@ export default class AppState implements IState {
 
   private data: Data;
 
+  public get isPortrait() {
+    return this.data.isPortrait[0];
+  }
+  public set isPortrait(v) {
+    this.data.isPortrait[1](v);
+  }
   public get zoom() {
     return this.data.zoom[0];
   }

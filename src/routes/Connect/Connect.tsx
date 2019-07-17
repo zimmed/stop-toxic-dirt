@@ -17,7 +17,7 @@ function Connect({ routes }: IProps) {
       <div className="Connect default-page">
         <YardSign />
         <Panel>
-          <h4>Coming Soon</h4>
+          <h4>More Content Coming Soon</h4>
           <p>Site is still under construction...</p>
         </Panel>
       </div>
