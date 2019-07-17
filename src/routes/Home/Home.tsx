@@ -66,9 +66,11 @@ function Home({ routes }: IProps) {
                 of life. But let's not forget this part of our recent history,
                 lest we repeat it!
               </p>
-              <h2 className="center spaced">
-                <Link to="/info">Get Informed Now!</Link>
-              </h2>
+              <h4 className="center spaced" style={{ fontSize: '1.4em' }}>
+                <strong>
+                  <Link to="/info">Get Informed Now</Link>
+                </strong>
+              </h4>
             </div>
           </div>
         </Panel>

@@ -40,18 +40,6 @@
   pointer-events: auto;
 }
 
-.Info .ReactTable .rt-th:not(:nth-child(3)) {
-  flex: 0 !important;
-  min-width: 12em !important;
-  max-width: 12em !important;
-}
-
-.Info .ReactTable .rt-td:not(:nth-child(3)) {
-  flex: 0 !important;
-  min-width: 12em !important;
-  max-width: 12em !important;
-}
-
 .Info .ReactTable .rt-td {
   font-family: 'Courier New', Courier, monospace;
 }
@@ -99,5 +87,17 @@
 
   .Info h1:first-child {
     margin-top: 0;
+  }
+
+  .Info .ReactTable .rt-th:not(:nth-child(3)) {
+    flex: 0 !important;
+    min-width: 12em !important;
+    max-width: 12em !important;
+  }
+
+  .Info .ReactTable .rt-td:not(:nth-child(3)) {
+    flex: 0 !important;
+    min-width: 12em !important;
+    max-width: 12em !important;
   }
 }
